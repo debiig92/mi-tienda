@@ -1,0 +1,80 @@
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('assets/img/order.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>Agregar Ordenes</h1>
+              <span class="subheading">Formulario para registrar una orden</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+      <!-- Main Content -->
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 mx-auto">
+            <mat-progress-bar *ngIf="showProgressBar" mode="indeterminate"></mat-progress-bar>
+          <div class="alert alert-success" role="alert" *ngIf="showSuccess">
+            Orden creada con éxito!
+          </div>
+          <div class="alert alert-danger" role="alert" *ngIf="showError">
+            Orden creada no fue creada!
+          </div>
+          <h2 class="section-heading">Crear Orden</h2>
+          <br>
+            <form [formGroup]="loginForm" id="login-form" name="login-form" class="nobottommargin" (submit)="submit()">
+              <div class="col_full">
+                <label for="login-form-username">Producto:</label>
+                <select formControlName="idProducto" id="products" class="form-control" >
+                  <option *ngFor="let product of products; let i = index" [value]="products[i].id">
+                    {{products[i].nombre}}
+                  </option>
+                </select>
+                <label  class="text-danger" *ngIf="loginForm.controls.idProducto.invalid">
+                  <p>*El producto es requerido</p>
+                </label>
+              </div>
+          
+              <div class="col_full">
+                <label for="login-form-password">Cliente:</label>
+                <select formControlName="idCliente" id="clients" class="form-control" >
+                  <option *ngFor="let client of clients; let i = index" [value]="clients[i].id">
+                    {{clients[i].nombres}} {{clients[i].apellidos}}
+                  </option>
+                </select>
+                <label  class="text-danger" *ngIf="loginForm.controls.idCliente.invalid">
+                  <p>*El cliente es requerido</p>
+                </label>
+              </div>
+          
+          
+              <div class="col_full">
+                  <label for="login-form-password">Cantidad:</label>
+                  <input formControlName="cantidad" #cantidad type="number" id="login-form-password" name="login-form-password" value="" class="form-control" />
+                  <label  class="text-danger" *ngIf="loginForm.controls.cantidad.invalid">
+                    <p>*La cantidad es requerida</p>
+                  </label>
+                </div>
+          
+                <div class="col_full">
+                  <label for="login-form-password">Fecha:</label>
+                  <input formControlName="fecha" #fecha type="date" id="login-form-password" name="login-form-password" value="" class="form-control" />
+                  <label  class="text-danger" *ngIf="loginForm.controls.fecha.invalid">
+                    <p>*La fecha es requerida</p>
+                  </label>
+                </div>
+                <br>
+              <div class="col_one_fifth nobottommargin">
+                <button type="submit" class="btn btn-primary float-right" id="login-form-submit" name="login-form-submit" value="login">Registrar</button>
+                <button class="btn btn-secondary float-right" routerLink="/ordenes">Atras</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    
+      <hr>

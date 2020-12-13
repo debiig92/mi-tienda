@@ -17,7 +17,7 @@ export class AgregarComponent implements OnInit {
       validators: [Validators.required] 
     }),
     precio: new FormControl(null, {
-      validators: [Validators.required ] 
+      validators: [Validators.required , Validators.pattern("^[0-9]*$"),] 
     })
   });
 

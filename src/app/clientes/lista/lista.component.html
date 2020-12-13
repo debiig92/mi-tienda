@@ -1,0 +1,57 @@
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('assets/img/clientes.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>Clientes</h1>
+              <span class="subheading">Listado de clientes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 col-md-10 mx-auto">
+          <h2 class="section-heading">Listado de clientes</h2>
+          <a mat-button routerLink="/clientes/agregar" class="btn btn-primary float-right">Crear cliente</a>
+          <table mat-table [dataSource]="dataSource">
+          
+              <!--- Note that these columns can be defined in any order.
+                    The actual rendered columns are set as a property on the row definition" -->
+            
+              <!-- Position Column -->
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef  style="text-align: center;"> Id. </th>
+                <td mat-cell *matCellDef="let element"  style="text-align: center;">{{element.id}}</td>
+              </ng-container>
+            
+              <!-- Name Column -->
+              <ng-container matColumnDef="nombres">
+                <th mat-header-cell *matHeaderCellDef  style="text-align: center;"> Nombres </th>
+                <td mat-cell *matCellDef="let element"  style="text-align: center;"> {{element.nombres}} </td>
+              </ng-container>
+            
+              <!-- Weight Column -->
+              <ng-container matColumnDef="apellidos">
+                <th mat-header-cell *matHeaderCellDef  style="text-align: center;"> Apellidos </th>
+                <td mat-cell *matCellDef="let element"  style="text-align: center;"> {{element.apellidos}} </td>
+              </ng-container>
+          
+              <ng-container matColumnDef="getdetails">
+                <th mat-header-cell *matHeaderCellDef  style="text-align: center;"> Acción </th>
+                <td  style="text-align: center;" mat-cell *matCellDef="let element"> <button mat-raised-button class="btn btn-secondary" (click)="mostrarCliente(element)">Mostrar</button> </td>
+              </ng-container>
+            
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+      </div>
+    </div>
+  
+    <hr>

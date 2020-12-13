@@ -1,0 +1,52 @@
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('assets/img/clientes.jpg')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h1>Mostrar Cliente</h1>
+          <span class="subheading">Detalle del cliente seleccionado</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <h2 class="section-heading"> Detalle de cliente</h2>
+        
+          <table class="table">
+           <tr>
+             <td>
+              <label for="login-form-username"><b>ID: </b></label>
+             </td>
+             <td>
+              <label for="login-form-username">{{ clienteSeleccionado?.id }}</label>
+             </td>
+           </tr> 
+           <tr>
+            <td>
+              <label for="login-form-username"><b>Nombre: </b></label>
+            </td>
+            <td>
+              <label for="login-form-username">{{ clienteSeleccionado?.nombres }}</label>
+            </td>
+          </tr> 
+
+          <tr>
+            <td>
+              <label for="login-form-password"><b>Apellido: </b></label>
+            </td>
+            <td>
+              <label for="login-form-password">{{ clienteSeleccionado?.apellidos }}</label>
+            </td>
+          </tr> 
+          </table>  
+          <button class="btn btn-secondary float-right" routerLink="/clientes">Atras</button>
+        </div>
+      </div>
+    </div>

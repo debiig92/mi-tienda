@@ -1,0 +1,56 @@
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('assets/img/clientes.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Agregar Cliente</h1>
+            <span class="subheading">Formulario para agregar clientes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 mx-auto">
+          <mat-progress-bar *ngIf="showProgressBar" mode="indeterminate"></mat-progress-bar>
+          <div class="alert alert-success" role="alert" *ngIf="showSuccess">
+            Cliente creado con éxito! Regresar a <a routerLink="/clientes">clientes</a>
+          </div>
+          <div class="alert alert-danger" role="alert" *ngIf="showError">
+            Cliente creado no fue creado!
+          </div>
+          <h2 class="section-heading">Crear clientes</h2>
+          <br>
+            <form [formGroup]="loginForm" id="login-form" name="login-form" class="nobottommargin" (submit)="submit()">
+              <div class="col_full">
+                <label for="login-form-username">Nombre:</label>
+                <input formControlName="nombres" #nombre type="text" id="login-form-username" name="login-form-username" class="form-control" />
+                <label class="text-danger" *ngIf="loginForm.controls.nombres.invalid">
+                  <p>*El nombre es requerido</p>
+                </label>
+              </div>
+
+              <div class="col_full">
+                <label for="login-form-password">Apellido:</label>
+                <input formControlName="apellidos" #apellido type="text" id="login-form-password" name="login-form-password" value="" class="form-control" />
+                <label  class="text-danger" *ngIf="loginForm.controls.apellidos.invalid">
+                  <p>*El apellido es requerido</p>
+                </label>
+              </div>
+              <br>
+              <div class="col_one_fifth nobottommargin">
+                <button type="submit" class="btn btn-primary float-right" id="login-form-submit" name="login-form-submit" value="login">Registrar</button>
+                <button class="btn btn-secondary float-right" routerLink="/clientes">Atras</button>
+                <!--<a href="#" class="fright">Forgot Password?</a>-->
+              </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  
+    <hr>

@@ -1,0 +1,64 @@
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('assets/img/productos.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>Productos</h1>
+              <span class="subheading">Mostrar detalle del producto seleccionado</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+      <!-- Main Content -->
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <h2 class="section-heading"> Detalle del producto</h2>
+          <br>
+            <table class="table">
+             <tr>
+               <td>
+                <label for="login-form-username"><b>ID: </b></label>
+               </td>
+               <td>
+                <label for="login-form-username">{{ productoSeleccionado?.id }}</label>
+               </td>
+             </tr> 
+             <tr>
+              <td>
+                <label for="login-form-username"><b>Nombre: </b></label>
+              </td>
+              <td>
+                <label for="login-form-username">{{ productoSeleccionado?.nombre }}</label>
+              </td>
+            </tr> 
+  
+            <tr>
+              <td>
+                <label for="login-form-password"><b>Descripción: </b></label>
+              </td>
+              <td>
+                <label for="login-form-password">{{ productoSeleccionado?.descripcion }}</label>
+              </td>
+            </tr>
+            
+            <tr>
+              <td>
+                <label for="login-form-password"><b>Precio: </b></label>
+              </td>
+              <td>
+                <label for="login-form-password">${{ productoSeleccionado?.precio }}</label>
+              </td>
+            </tr> 
+
+            </table>  
+            <button class="btn btn-secondary float-right" routerLink="/productos">Atras</button>
+          </div>
+        </div>
+      </div>
+

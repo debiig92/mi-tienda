@@ -1,0 +1,63 @@
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('assets/img/productos.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>Productos</h1>
+              <span class="subheading">Agregar productos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <mat-progress-bar *ngIf="showProgressBar" mode="indeterminate"></mat-progress-bar>
+          <div class="alert alert-success" role="alert" *ngIf="showSuccess">
+            Producto creado con éxito!
+          </div>
+          <div class="alert alert-danger" role="alert" *ngIf="showError">
+            Producto creado no fue creado!
+          </div>
+          <h2 class="section-heading">Crear productos</h2>
+          <br>
+          <form [formGroup]="loginForm" id="login-form" name="login-form" class="nobottommargin" (submit)="submit()">
+            <div class="col_full">
+              <label for="login-form-username">Nombre:</label>
+              <input formControlName="nombre" #nombre type="text" id="login-form-username" name="login-form-username" value="" class="form-control" />
+              <label class="text-danger" *ngIf="loginForm.controls.nombre.invalid">
+                <p>*El nombre es requerido</p>
+              </label>
+            </div>
+        
+            <div class="col_full">
+              <label for="login-form-password">Descripcion:</label>
+              <textarea class="form-control"  formControlName="descripcion" rows="3"></textarea>
+              <label class="text-danger" *ngIf="loginForm.controls.descripcion.invalid">
+                <p>*La descripción es requerida</p>
+              </label>
+            </div>
+        
+        
+            <div class="col_full">
+                <label for="login-form-password">Precio:</label>
+                <input formControlName="precio" #apellido type="number" id="login-form-password" name="login-form-password" value="" class="form-control" />
+                <label class="text-danger" *ngIf="loginForm.controls.precio.invalid">
+                  <p>*El precio es requerido</p>
+                </label>
+              </div>
+        
+            <div class="col_one_fifth nobottommargin">
+              <button type="submit" class="btn btn-primary float-right" id="login-form-submit" name="login-form-submit" value="login">Registrar</button>
+              <button class="btn btn-secondary float-right" routerLink="/productos">Atras</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  
+    <hr>

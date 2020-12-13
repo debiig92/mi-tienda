@@ -19,7 +19,7 @@
         <div class="col-lg-12 col-md-12 mx-auto">
           <mat-progress-bar *ngIf="showProgressBar" mode="indeterminate"></mat-progress-bar>
           <div class="alert alert-success" role="alert" *ngIf="showSuccess">
-            Cliente creado con éxito! Regresar a <a routerLink="/clientes">clientes</a>
+            Cliente creado con éxito!
           </div>
           <div class="alert alert-danger" role="alert" *ngIf="showError">
             Cliente creado no fue creado!
@@ -46,7 +46,6 @@
               <div class="col_one_fifth nobottommargin">
                 <button type="submit" class="btn btn-primary float-right" id="login-form-submit" name="login-form-submit" value="login">Registrar</button>
                 <button class="btn btn-secondary float-right" routerLink="/clientes">Atras</button>
-                <!--<a href="#" class="fright">Forgot Password?</a>-->
               </div>
             </form>
         </div>

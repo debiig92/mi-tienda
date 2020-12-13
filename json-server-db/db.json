@@ -1,0 +1,44 @@
+{
+  "clientes": [
+    {
+      "id": "1",
+      "nombres": "TestN1",
+      "apellidos": "TestA1"
+    },
+    {
+      "nombres": "TestN12",
+      "apellidos": "TestA2",
+      "id": "H0nZYv9"
+    }
+  ],
+  "ordenes": [
+    {
+      "idProducto": "1",
+      "idCliente": "1",
+      "id": "1",
+      "cantidad": "1",
+      "fecha": "2020-12-01"
+    },
+    {
+      "idProducto": "vWnU01w",
+      "idCliente": "H0nZYv9",
+      "cantidad": 1,
+      "fecha": "2020-12-19",
+      "id": "ElUy61U"
+    }
+  ],
+  "productos": [
+    {
+      "id": "1",
+      "nombre": "Laptop",
+      "descripcion": "Laptop ASUS",
+      "precio": "1000"
+    },
+    {
+      "nombre": "Pantalla Plasma",
+      "descripcion": "Pantalla Plasma 48 pulgadas",
+      "precio": 12333,
+      "id": "vWnU01w"
+    }
+  ]
+}

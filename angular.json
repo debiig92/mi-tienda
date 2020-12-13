@@ -28,9 +28,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/vendor/bootstrap/css/bootstrap.min.css",
+              "src/assets/vendor/fontawesome-free/css/all.min.css",
+              "src/assets/css/clean-blog.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/vendor/jquery/jquery.min.js",
+              "src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+              "src/assets/js/clean-blog.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -124,5 +131,8 @@
       }
     }
   },
-  "defaultProject": "mi-tienda"
+  "defaultProject": "mi-tienda",
+  "cli": {
+    "analytics": "9d332512-e516-4c0c-8f75-24c7808cb115"
+  }
 }
